@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150416160351) do
+ActiveRecord::Schema.define(:version => 20150416163344) do
 
   create_table "elections", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(:version => 20150416160351) do
     t.integer  "owner"
     t.datetime "start"
     t.datetime "end"
+    t.string   "updid"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "questions", :force => true do |t|
+    t.integer  "election_id"
+    t.string   "question"
+    t.integer  "limit"
+    t.boolean  "write_in"
     t.string   "updid"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

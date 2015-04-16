@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Election:</b>
+  <%= @question.election_id %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @question.question %>
+</p>
+
+<p>
+  <b>Limit:</b>
+  <%= @question.limit %>
+</p>
+
+<p>
+  <b>Write in:</b>
+  <%= @question.write_in %>
+</p>
+
+<p>
+  <b>Updid:</b>
+  <%= @question.updid %>
+</p>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
