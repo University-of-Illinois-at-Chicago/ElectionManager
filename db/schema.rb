@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150416181133) do
+ActiveRecord::Schema.define(:version => 20150416181453) do
 
   create_table "answers", :force => true do |t|
     t.integer  "election_id"
@@ -77,6 +77,13 @@ ActiveRecord::Schema.define(:version => 20150416181133) do
     t.string   "updid"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "ballot_id"
+    t.integer  "answer_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
