@@ -1,4 +1,6 @@
 ElectionManager::Application.routes.draw do
+  resources :elections
+
   resources :users
 
   # The priority is based upon order of creation:
