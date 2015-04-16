@@ -1,4 +1,6 @@
 ElectionManager::Application.routes.draw do
+  resources :voter_lists
+
   resources :election_users
 
   resources :answers
