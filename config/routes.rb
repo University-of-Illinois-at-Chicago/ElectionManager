@@ -1,4 +1,6 @@
 ElectionManager::Application.routes.draw do
+  get "welcome/index"
+
   resources :votes
 
   resources :voters
@@ -64,7 +66,7 @@ ElectionManager::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'elections#main'
+   root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
