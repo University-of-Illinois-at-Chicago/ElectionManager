@@ -1,0 +1,37 @@
+<%= form_for(@election_user) do |f| %>
+  <% if @election_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@election_user.errors.count, "error") %> prohibited this election_user from being saved:</h2>
+
+      <ul>
+      <% @election_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :election_id %><br />
+    <%= f.number_field :election_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :edit %><br />
+    <%= f.check_box :edit %>
+  </div>
+  <div class="field">
+    <%= f.label :view_results %><br />
+    <%= f.check_box :view_results %>
+  </div>
+  <div class="field">
+    <%= f.label :updid %><br />
+    <%= f.text_field :updid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
