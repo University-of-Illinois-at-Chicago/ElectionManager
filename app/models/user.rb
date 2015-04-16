@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
   attr_accessible :fname, :lname, :netid, :updid
-  belongs_to :election
+  has_many :elections
 end
