@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  election_id: 1
+  time: 2015-04-16 13:07:51
+
+two:
+  election_id: 1
+  time: 2015-04-16 13:07:51

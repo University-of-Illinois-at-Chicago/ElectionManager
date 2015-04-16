@@ -1,4 +1,24 @@
 ElectionManager::Application.routes.draw do
+  resources :votes
+
+  resources :drop_tablevoter_lists
+
+  resources :voters
+
+  resources :ballots
+
+  resources :voter_lists
+
+  resources :election_users
+
+  resources :answers
+
+  resources :questions
+
+  resources :elections
+
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
