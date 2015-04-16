@@ -1,6 +1,6 @@
-class CreateVoterLists < ActiveRecord::Migration
+class CreateVoters < ActiveRecord::Migration
   def change
-    create_table :voter_lists do |t|
+    create_table :voters do |t|
       t.integer :election_id
       t.integer :user_id
       t.boolean :voted

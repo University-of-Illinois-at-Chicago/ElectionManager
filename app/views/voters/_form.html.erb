@@ -1,10 +1,10 @@
-<%= form_for(@voter_list) do |f| %>
-  <% if @voter_list.errors.any? %>
+<%= form_for(@voter) do |f| %>
+  <% if @voter.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@voter_list.errors.count, "error") %> prohibited this voter_list from being saved:</h2>
+      <h2><%= pluralize(@voter.errors.count, "error") %> prohibited this voter from being saved:</h2>
 
       <ul>
-      <% @voter_list.errors.full_messages.each do |msg| %>
+      <% @voter.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

@@ -1,4 +1,12 @@
 ElectionManager::Application.routes.draw do
+  resources :votes
+
+  resources :drop_tablevoter_lists
+
+  resources :voters
+
+  resources :ballots
+
   resources :voter_lists
 
   resources :election_users
