@@ -1,35 +1,34 @@
-<h1>Listing elections</h1>
+    <h1>Listing elections</h1>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Contact</th>
+        <th>Owner</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Updid</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Contact</th>
-    <th>Owner</th>
-    <th>Start</th>
-    <th>End</th>
-    <th>Updid</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <% @elections.each do |election| %>
+      <tr>
+        <td><%= election.title %></td>
+        <td><%= election.description %></td>
+        <td><%= election.contact %></td>
+        <td><%= election.user_id %></td>
+        <td><%= election.start %></td>
+        <td><%= election.end %></td>
+        <td><%= election.updid %></td>
+        <td><%= link_to 'Show', election %></td>
+        <td><%= link_to 'Edit', edit_election_path(election) %></td>
+        <td><%= link_to 'Destroy', election, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
 
-<% @elections.each do |election| %>
-  <tr>
-    <td><%= election.title %></td>
-    <td><%= election.description %></td>
-    <td><%= election.contact %></td>
-    <td><%= election.owner %></td>
-    <td><%= election.start %></td>
-    <td><%= election.end %></td>
-    <td><%= election.updid %></td>
-    <td><%= link_to 'Show', election %></td>
-    <td><%= link_to 'Edit', edit_election_path(election) %></td>
-    <td><%= link_to 'Destroy', election, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <br />
 
-<br />
-
-<%= link_to 'New Election', new_election_path %>
+    <%= link_to 'New Election', new_election_path %>
