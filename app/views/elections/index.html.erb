@@ -1,34 +1,31 @@
-    <h1>Listing elections</h1>
-    <table>
-      <tr>
+<table class="table">
+    <tr>
         <th>Title</th>
-        <th>Description</th>
         <th>Contact</th>
         <th>Owner</th>
+        <th>Status</th>
         <th>Start</th>
         <th>End</th>
-        <th>Updid</th>
         <th></th>
         <th></th>
         <th></th>
-      </tr>
+        <th>Duplicate?</th>
+    </tr>
 
     <% @elections.each do |election| %>
-      <tr>
-        <td><%= election.title %></td>
-        <td><%= election.description %></td>
-        <td><%= election.contact %></td>
-        <td><%= election.user_id %></td>
-        <td><%= election.start %></td>
-        <td><%= election.end %></td>
-        <td><%= election.updid %></td>
-        <td><%= link_to 'Show', election %></td>
-        <td><%= link_to 'Edit', edit_election_path(election) %></td>
-        <td><%= link_to 'Destroy', election, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+            <td><%= election.title %></td>
+            <td><%= election.contact %></td>
+            <td><%= election.owner %></td>
+            <td>Status Here</td>
+            <td><%= election.start %></td>
+            <td><%= election.end %></td>
+            <td><%= link_to 'Show', election %></td>
+            <td><%= link_to 'Edit', edit_election_path(election) %></td>
+            <td><%= link_to 'Destroy', election, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>Duplicate</td>
+        </tr>
     <% end %>
-    </table>
-
-    <br />
-
-    <%= link_to 'New Election', new_election_path %>
+</table>
+<br />
+<%= link_to 'New Election', new_election_path %>
