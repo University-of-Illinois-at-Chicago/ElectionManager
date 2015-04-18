@@ -1,8 +1,9 @@
 class Election < ActiveRecord::Base
+  CURRENT_DATE = DateTime.now
   attr_accessible :contact, :description, :end_dt, :start, :title, :updid, :user_id
-
   validates :contact, :presence => true
-  validates :end_dt, :presence => true
+  validates_format_of :contact, :with => /@/
+
   validates :start, :presence => true
   validates :title, :presence => true
 
@@ -12,7 +13,6 @@ class Election < ActiveRecord::Base
   has_many :questions
   has_many :voters
 
-  CURRENT_DATE = DateTime.now
 
   def owner
     owner = User.find(user_id)
