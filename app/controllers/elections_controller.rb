@@ -41,7 +41,6 @@ class ElectionsController < ApplicationController
   # POST /elections.json
   def create
     @election = Election.new(params[:election])
-
     respond_to do |format|
       if @election.save
         format.html { redirect_to @election, notice: 'Election was successfully created.' }

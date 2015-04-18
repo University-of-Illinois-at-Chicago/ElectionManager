@@ -17,9 +17,9 @@
             <td><%= election.title %></td>
             <td><%= election.contact %></td>
             <td><%= election.owner %></td>
-            <td>Status Here</td>
+            <td><%= election.status %></td>
             <td><%= election.start %></td>
-            <td><%= election.end %></td>
+            <td><%= election.end_dt %></td>
             <td><%= link_to 'Show', election %></td>
             <td><%= link_to 'Edit', edit_election_path(election) %></td>
             <td><%= link_to 'Destroy', election, method: :delete, data: { confirm: 'Are you sure?' } %></td>

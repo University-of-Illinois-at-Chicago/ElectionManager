@@ -13,6 +13,18 @@
 
 ActiveRecord::Schema.define(:version => 20150416191846) do
 
+  create_table "Elections", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "contact"
+    t.integer  "user_id"
+    t.datetime "start"
+    t.datetime "end_dt"
+    t.string   "updid"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "answers", :force => true do |t|
     t.integer  "election_id"
     t.integer  "question_id"
@@ -37,18 +49,6 @@ ActiveRecord::Schema.define(:version => 20150416191846) do
     t.string   "updid"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-  end
-
-  create_table "elections", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "contact"
-    t.integer  "user_id"
-    t.datetime "start"
-    t.datetime "end"
-    t.string   "updid"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
   create_table "questions", :force => true do |t|
