@@ -17,7 +17,11 @@
             <td><%= election.contact %></td>
             <td><%= election.owner %></td>
             <td><%= election.status %></td>
-            <td><%= link_to 'Edit', edit_election_path(election) %></td>
+            <% if election.is_pending? %>
+                <td><%= link_to 'Edit', edit_election_path(election) %></td>
+            <% else %>
+                <td>Edit</td>
+            <% end %>
             <td>Edit Ballot</td>
             <td>Edit Voters</td>
             <td><%= link_to 'Destroy', election, method: :delete, data: { confirm: 'Are you sure?' } %></td>
