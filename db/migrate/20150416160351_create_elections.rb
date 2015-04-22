@@ -6,7 +6,7 @@ class CreateElections < ActiveRecord::Migration
       t.string :contact
       t.integer :owner
       t.datetime :start
-      t.datetime :end
+      t.datetime :finish
       t.string :updid
 
       t.timestamps
