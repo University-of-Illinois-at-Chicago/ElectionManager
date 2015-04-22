@@ -6,10 +6,10 @@ class Election < ActiveRecord::Base
 
   validates :title, :presence => true
   belongs_to :users
-  has_many :ballots
 
   has_many :questions
   has_many :voters
+  has_many :ballots
   
   validate :validate_data
 

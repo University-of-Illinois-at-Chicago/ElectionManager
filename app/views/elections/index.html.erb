@@ -20,7 +20,7 @@
 
       <% if election.is_pending? %>
         <td><%= link_to 'Edit', edit_election_path(election) %></td>
-        <td><%= link_to 'Edit Ballot', edit_question_path(election) %></td>
+        <td><%= link_to 'Edit Ballot', questions_path(:election_id => election) %></td>
       <% else %>
         <td>Edit</td>
         <td>Edit Ballot</td>
@@ -29,7 +29,7 @@
       <% if election.is_finished? %>
         <td>Edit Voters</td>
       <% else %>
-        <td><%= link_to 'Edit Voters', edit_question_path(election) %></td>
+        <td><%= link_to 'Edit Voters', voters_path(election) %></td>
       <% end %>
 
       <% if election.is_running? %>
