@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20150416191846) do
     t.string   "contact"
     t.integer  "user_id"
     t.datetime "start"
-    t.datetime "end_dt"
+    t.datetime "finish"
     t.string   "updid"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
