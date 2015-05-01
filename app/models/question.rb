@@ -4,4 +4,8 @@ class Question < ActiveRecord::Base
   has_many :answers
   validates :question, :presence => true
 
+  def allow_write_in?
+    return "Yes" if write_in
+    "No"
+  end
 end
