@@ -2,7 +2,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @election = Election.find(params[:election_id])
+    @election_id = params[:election_id]
+    @election = Election.find(@election_id)
     @questions = @election.questions
 
     respond_to do |format|
@@ -25,7 +26,8 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   # GET /questions/new.json
   def new
-    @question = Question.new
+    @question = Question.new()
+    @election_id = params[:election_id]
 
     respond_to do |format|
       format.html # new.html.erb
