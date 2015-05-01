@@ -1,6 +1,6 @@
 <h1>Listing questions</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Election</th>
     <th>Question</th>
@@ -28,4 +28,4 @@
 
 <br />
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to 'New Question', new_question_path(:election_id => params[:election_id]) %>
