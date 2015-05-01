@@ -1,14 +1,13 @@
 class CreateElections < ActiveRecord::Migration
   def change
     create_table :elections do |t|
-      t.string :title
+      t.string :title, :default => "", :null => false
       t.text :description
-      t.string :contact
-      t.integer :owner
-      t.datetime :start
-      t.datetime :finish
-      t.string :updid
-
+      t.string :contact, :default => "", :null => false
+      t.integer :owner , :null => false
+      t.datetime :start , :null => false
+      t.datetime :finish , :null => false
+      t.string :updid , :null => false
       t.timestamps
     end
   end
