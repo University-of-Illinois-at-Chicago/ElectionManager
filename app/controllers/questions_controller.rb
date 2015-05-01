@@ -43,7 +43,7 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
-    @question = Question.new(params[:question])
+    @question = Question.new(params[:question], :election_id=>params[:election_id])
 
     respond_to do |format|
       if @question.save
