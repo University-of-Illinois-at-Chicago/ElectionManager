@@ -25,6 +25,8 @@ class AnswersController < ApplicationController
   # GET /answers/new.json
   def new
     @answer = Answer.new
+    @answer.election_id = params[:election_id]
+    @answer.question_id = params[:question_id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +43,8 @@ class AnswersController < ApplicationController
   # POST /answers.json
   def create
     @answer = Answer.new(params[:answer])
+    @answer.question_id = params[:question_id]
+    @answer.election_id = params[:election_id]
 
     respond_to do |format|
       if @answer.save
