@@ -8,6 +8,9 @@ gem 'rails', '3.2.8'
 # Using MySQL for this project
 gem 'mysql2'
 
+# Install sqlite3 for testing
+gem 'sqlite3'
+
 # Use boostrap Gems
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
