@@ -5,6 +5,11 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+
+# Require OmniAuth
+gem 'omniauth'
+gem 'omniauth-shibboleth'
+
 # Using MySQL for this project
 gem 'mysql2'
 
