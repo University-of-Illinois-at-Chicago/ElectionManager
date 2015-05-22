@@ -10,11 +10,20 @@ gem 'rails', '3.2.8'
 gem 'omniauth'
 gem 'omniauth-shibboleth'
 
+#Use rspec for dev and test
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 # Using MySQL for this project
-gem 'mysql2'
+group :development do
+  gem 'mysql2'
+end
 
 # Install sqlite3 for testing
-gem 'sqlite3'
+group :test do
+  gem 'sqlite3'
+end
 
 # Use boostrap Gems
 gem 'bootstrap-sass', '~> 3.2.0'
