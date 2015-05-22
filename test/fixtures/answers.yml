@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+QuestionOneAnswer:
   election_id: 1
   question_id: 1
-  answer: MyString
-  updid: MyString
+  answer: Answer for question 1 
+  updid: america 
 
-two:
+QuestionTwoAnswer:
   election_id: 1
-  question_id: 1
-  answer: MyString
-  updid: MyString
+  question_id: 2
+  answer: Answer for question 2 
+  updid: america 

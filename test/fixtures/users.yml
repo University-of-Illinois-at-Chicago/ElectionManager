@@ -1,13 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  fname: MyString
-  lname: MyString
-  netid: MyString
-  updid: MyString
+america:
+  fname: America
+  lname: Calleros
+  netid: america
+  updid: jelene
 
-two:
-  fname: MyString
-  lname: MyString
-  netid: MyString
-  updid: MyString
+alina:
+  fname: Alina 
+  lname: Mackenzie 
+  netid: aag 
+  updid: america
+
+johnathan:
+  fname: Johnathan 
+  lname: Kupferer
+  netid: jtk 
+  updid: alina 
+
+esteban:
+  fname: Esteban 
+  lname: Perez
+  netid: esteban 
+  updid: jtk 
+
+jelene:
+  fname: Jelene 
+  lname: Crehan 
+  netid: jelene 
+  updid: esteban 

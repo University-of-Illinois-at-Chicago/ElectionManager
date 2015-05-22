@@ -1,15 +1,64 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+Election1Question1:
   election_id: 1
-  question: MyString
+  question: Question one 
   limit: 1
   write_in: false
-  updid: MyString
+  updid: america 
 
-two:
+Election1Question2:
   election_id: 1
-  question: MyString
+  question: Question two
+  limit: 2
+  write_in: true
+  updid: aag 
+
+Election1Question3:
+  election_id: 1
+  question: Question three 
+  limit: 2
+  write_in: true
+  updid: aag 
+
+Election2Question1:
+  election_id: 2
+  question: Question 2 one 
   limit: 1
   write_in: false
-  updid: MyString
+  updid: america 
+
+Election2Question2:
+  election_id: 2
+  question: Question 2 two
+  limit: 2
+  write_in: true
+  updid: aag 
+
+Election2Question3:
+  election_id: 2
+  question: Question 2 three 
+  limit: 2
+  write_in: true
+  updid: aag 
+
+Election3Question1:
+  election_id: 3
+  question: Question 3 one 
+  limit: 1
+  write_in: false
+  updid: america 
+
+Election3Question2:
+  election_id: 3
+  question: Question 3 two
+  limit: 2
+  write_in: true
+  updid: aag 
+
+Election3Question3:
+  election_id: 3
+  question: Question 3 three 
+  limit: 2
+  write_in: true
+  updid: aag 
