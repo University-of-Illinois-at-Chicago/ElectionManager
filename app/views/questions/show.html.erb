@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <b>Election:</b>
   <%= @question.election_id %>
@@ -25,6 +24,6 @@
   <%= @question.updid %>
 </p>
 
-
 <%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<%= link_to 'My Elections', elections_path %> |
+<%= link_to 'Edit options', new_answer_path(:question_id => @question, :election_id =>@question.election_id) %>
