@@ -30,6 +30,9 @@ end
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+# Use Turbo links
+gem 'turbolinks'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
