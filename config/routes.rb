@@ -1,5 +1,5 @@
 ElectionManager::Application.routes.draw do
-  match '/auth/:provider/callback', to: 'sessions#create'
+#  match '/auth/:provider/callback', to: 'sessions#create'
   get "welcome/index"
 
   resources :votes

@@ -1,6 +1,7 @@
 class Election < ActiveRecord::Base
   CURRENT_DATE = DateTime.now
-  attr_accessible :contact, :description, :finish, :start, :title, :updid, :user_id
+  attr_accessible :contact, :description, :finish, :start, :title
+  attr_reader :updid, :user_id
   validates :contact, :presence => true
   validates_format_of :contact, :with => /@/
 

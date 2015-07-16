@@ -7,8 +7,8 @@ gem 'rails', '3.2.8'
 
 
 # Require OmniAuth
-gem 'omniauth'
-gem 'omniauth-shibboleth'
+#gem 'omniauth'
+#gem 'omniauth-shibboleth'
 
 #Use rspec for dev and test
 group :development, :test do

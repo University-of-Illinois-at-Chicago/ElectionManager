@@ -2,8 +2,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @election_id = params[:election_id]
-    @election = Election.find(@election_id)
+    @election = Election.find(params[:election_id])
     @questions = @election.questions
 
     respond_to do |format|
@@ -83,5 +82,7 @@ class QuestionsController < ApplicationController
       format.html { redirect_to questions_url }
       format.json { head :no_content }
     end
+    
+    redirect(:action => 'index')
   end
 end
