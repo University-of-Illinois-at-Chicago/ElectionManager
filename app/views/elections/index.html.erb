@@ -1,35 +1,48 @@
-<h1>Listing elections</h1>
-
-<table>
+<table class="table">
   <tr>
     <th>Title</th>
-    <th>Description</th>
     <th>Contact</th>
     <th>Owner</th>
-    <th>Start</th>
-    <th>End</th>
-    <th>Updid</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Status</th>
+    <th>Edit Election</th>
+    <th>Edit Ballot</th>
+    <th>Edit Voters</th>
+    <th>Delete Election</th>
+    <th>Duplicate?</th>
+    <th>Election Results</th>
   </tr>
 
-<% @elections.each do |election| %>
-  <tr>
-    <td><%= election.title %></td>
-    <td><%= election.description %></td>
-    <td><%= election.contact %></td>
-    <td><%= election.owner %></td>
-    <td><%= election.start %></td>
-    <td><%= election.end %></td>
-    <td><%= election.updid %></td>
-    <td><%= link_to 'Show', election %></td>
-    <td><%= link_to 'Edit', edit_election_path(election) %></td>
-    <td><%= link_to 'Destroy', election, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @elections.each do |election| %>
+    <tr>
+      <td><%= link_to election.title, election %></td>
+      <td><%= election.contact %></td>
+      <td><%= election.owner %></td>
+      <td><%= election.status %></td>
+
+      <% if election.is_pending? %>
+        <td><%= link_to 'Edit', edit_election_path(election) %></td>
+        <td><%= link_to 'Edit Ballot', questions_path(:election_id => election) %></td>
+      <% else %>
+        <td>Edit</td>
+        <td>Edit Ballot</td>
+      <% end %>
+
+      <% if election.is_finished? %>
+        <td>Edit Voters</td>
+      <% else %>
+        <td><%= link_to 'Edit Voters', voters_path(election) %></td>
+      <% end %>
+
+      <% if election.is_running? %>
+        <td>Delete</td>
+      <% else %>
+        <td><%= link_to 'Delete', election, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+
+      <td>Duplicate</td>
+      <td>Results</td>
+    </tr>
+  <% end %>
 </table>
-
 <br />
-
 <%= link_to 'New Election', new_election_path %>

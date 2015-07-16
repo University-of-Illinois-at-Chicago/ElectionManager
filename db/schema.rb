@@ -14,51 +14,51 @@
 ActiveRecord::Schema.define(:version => 20150416191846) do
 
   create_table "answers", :force => true do |t|
-    t.integer  "election_id"
-    t.integer  "question_id"
-    t.string   "answer"
-    t.string   "updid"
+    t.integer  "election_id", :null => false
+    t.integer  "question_id", :null => false
+    t.string   "answer",      :null => false
+    t.string   "updid",       :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "ballots", :force => true do |t|
-    t.integer  "election_id"
+    t.integer  "election_id", :null => false
     t.datetime "time"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "election_users", :force => true do |t|
-    t.integer  "election_id"
-    t.integer  "user_id"
-    t.boolean  "edit"
-    t.boolean  "view_results"
-    t.string   "updid"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "election_id",                     :null => false
+    t.integer  "user_id",                         :null => false
+    t.boolean  "edit",         :default => false, :null => false
+    t.boolean  "view_results", :default => false, :null => false
+    t.string   "updid",                           :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "elections", :force => true do |t|
-    t.string   "title"
+    t.string   "title",       :default => "", :null => false
     t.text     "description"
-    t.string   "contact"
-    t.integer  "user_id"
-    t.datetime "start"
-    t.datetime "end"
-    t.string   "updid"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "contact",     :default => "", :null => false
+    t.integer  "user_id",                     :null => false
+    t.datetime "start",                       :null => false
+    t.datetime "finish",                      :null => false
+    t.string   "updid",                       :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "questions", :force => true do |t|
-    t.integer  "election_id"
-    t.string   "question"
-    t.integer  "limit"
+    t.integer  "election_id",                :null => false
+    t.string   "question",                   :null => false
+    t.integer  "limit",       :default => 1, :null => false
     t.boolean  "write_in"
-    t.string   "updid"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "updid",                      :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -71,17 +71,17 @@ ActiveRecord::Schema.define(:version => 20150416191846) do
   end
 
   create_table "voters", :force => true do |t|
-    t.integer  "election_id"
-    t.integer  "user_id"
-    t.boolean  "voted"
-    t.string   "updid"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "election_id",                    :null => false
+    t.integer  "user_id",                        :null => false
+    t.boolean  "voted",       :default => false, :null => false
+    t.string   "updid",                          :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "votes", :force => true do |t|
-    t.integer  "ballot_id"
-    t.integer  "answer_id"
+    t.integer  "ballot_id",  :null => false
+    t.integer  "answer_id",  :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

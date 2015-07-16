@@ -2,7 +2,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    @election = Election.find(params[:election_id])
+    @questions = @election.questions
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +25,8 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   # GET /questions/new.json
   def new
-    @question = Question.new
+    @question = Question.new()
+    @election_id = params[:election_id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +43,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(params[:question])
+    @question.election_id = params[:election_id]
 
     respond_to do |format|
       if @question.save
@@ -79,5 +82,7 @@ class QuestionsController < ApplicationController
       format.html { redirect_to questions_url }
       format.json { head :no_content }
     end
+    
+    redirect(:action => 'index')
   end
 end

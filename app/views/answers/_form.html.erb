@@ -1,4 +1,6 @@
 <%= form_for(@answer) do |f| %>
+  <input type="hidden" name="election_id" value="<%= @answer.election_id %>">
+  <input type="hidden" name="question_id" value="<%= @answer.question_id %>">
   <% if @answer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
@@ -10,7 +12,7 @@
       </ul>
     </div>
   <% end %>
-
+<!--
   <div class="field">
     <%= f.label :election_id %><br />
     <%= f.number_field :election_id %>
@@ -19,6 +21,7 @@
     <%= f.label :question_id %><br />
     <%= f.number_field :question_id %>
   </div>
+  -->
   <div class="field">
     <%= f.label :answer %><br />
     <%= f.text_field :answer %>

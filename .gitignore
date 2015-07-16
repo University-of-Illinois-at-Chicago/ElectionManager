@@ -16,6 +16,9 @@
 # Ignore .swp files
 *.swp
 
+# Ignore back up files
+*.backup
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp

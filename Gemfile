@@ -5,10 +5,29 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
+
+# Require OmniAuth
+#gem 'omniauth'
+#gem 'omniauth-shibboleth'
+
+#Use rspec for dev and test
+group :development, :test do
+  gem 'rspec-rails'
+end
 
 # Using MySQL for this project
-gem 'mysql2'
+group :development do
+  gem 'mysql2'
+end
+
+# Install sqlite3 for testing
+group :test do
+  gem 'sqlite3'
+end
+
+# Use boostrap Gems
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
