@@ -1,3 +1,5 @@
 class Election < ActiveRecord::Base
-  # attr_accessible :title, :body
+  belongs_to :user
+
+  validates :start, :presence => true
 end
