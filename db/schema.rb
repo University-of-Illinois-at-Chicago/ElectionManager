@@ -9,31 +9,23 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150716220253) do
+ActiveRecord::Schema.define(version: 20150716220253) do
 
-  create_table "elections", :force => true do |t|
-    t.string   "title",       :default => "", :null => false
-    t.text     "description"
-    t.string   "contact",     :default => "", :null => false
-    t.integer  "user_id",                     :null => false
-    t.datetime "start",                       :null => false
-    t.datetime "finish",                      :null => false
-    t.string   "updid",                       :null => false
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+  create_table "elections", id: false, force: :cascade do |t|
+    t.integer  "id",          limit: 4,     default: 0,         null: false
+    t.string   "title",       limit: 255,   default: "",        null: false
+    t.text     "description", limit: 65535
+    t.string   "contact",     limit: 255,   default: "",        null: false
+    t.integer  "user_id",     limit: 4,                         null: false
+    t.datetime "start"
+    t.datetime "finish"
+    t.string   "updid",       limit: 255,   default: "Unknown", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "elections", ["user_id"], :name => "index_elections_on_user_id"
-
-  create_table "users", :force => true do |t|
-    t.string   "fname"
-    t.string   "lname"
-    t.string   "netid"
-    t.string   "updid"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+  add_index "elections", ["id"], name: "index_elections_on_id", unique: true, using: :btree
 
 end

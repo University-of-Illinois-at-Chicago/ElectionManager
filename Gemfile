@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 #gem 'rails', '4.2.3'
-gem 'rails', '4.1.4'
-#gem 'rails'
+#gem 'rails', '4.1.4'
+#gem 'rails', '4.0.0'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -14,7 +15,12 @@ gem 'rails', '4.1.4'
 
 #Use rspec for dev and test
 group :development, :test do
+  gem 'rspec'
+  gem 'rspec-core'
   gem 'rspec-rails', require: 'rspec/rails'
+  gem 'shoulda-matchers', '2.8.0', require: false
+  #gem 'shoulda-matchers', '2.8.0', require: false
+  gem 'factory_girl_rails'
 end
 
 # Using MySQL for this project
@@ -24,7 +30,11 @@ end
 
 # Install sqlite3 for testing
 group :test do
-  gem 'sqlite3'
+  gem 'faker'
+#  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
+#  gem 'sqlite3'
 end
 
 # Use boostrap Gems
